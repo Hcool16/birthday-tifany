@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Tifany</title>
+  <style>
+    body {margin:0; padding:0; background:black; color:white; font-family:'Georgia', serif; overflow:hidden;}
+    section {display:none; height:100vh; justify-content:center; align-items:center; flex-direction:column; text-align:center; padding:20px;}
+    #galaxy { display:flex; }
+
+    /* ⭐ Scroll khusus untuk timeline */
+    #timeline {
+      display: none;
+      height: 100vh;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+      overflow-y: auto; /* biar bisa digeser */
+    }
+    #timeline::-webkit-scrollbar { width: 8px; }
+    #timeline::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+    #timeline::-webkit-scrollbar-thumb:hover { background: #555; }
+
+    .stars {position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1; overflow:hidden;}
+    .star {position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite;}
+    @keyframes twinkle {0%,100%{opacity:0.2;}50%{opacity:1;}}
+
+    .planet-container {position:relative; display:inline-block; margin-top:20px;}
+    .planet {width:180px;height:180px;background:radial-gradient(circle at 30% 30%,#ffcc88,#cc6600);border-radius:50%;animation:spin 20s linear infinite;}
+    .ring {position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) rotate(25deg); border-radius:50%; pointer-events:none;}
+    .ring1 {width:250px;height:80px;border:3px solid #ffe9b0;}
+    .ring2 {width:300px;height:100px;border:3px solid #ffd27f;}
+    .ring3 {width:350px;height:120px;border:3px solid #ffbb55;}
+    @keyframes spin {100%{transform:rotate(360deg);}}
+    .planet-title {font-size:28px; font-weight:bold; color:#ffeb99; margin-bottom:15px; text-shadow:0 0 10px #ffcc88,0 0 20px #ffaa33;}
+
+    .timeline-item {margin:30px 0; opacity:0; transform:translateY(20px); transition:all 1s;}
+    .timeline-item.active {opacity:1; transform:translateY(0);}
+    .timeline-item img {max-width:200px; border-radius:15px; margin-top:10px; box-shadow:0 4px 10px rgba(0,0,0,0.5);}
+
+    .cake-container {position:relative; margin-top:20px;}
+    @keyframes flicker {0%{transform:translateX(-50%) scale(1);opacity:0.8;}100%{transform:translateX(-50%) scale(1.2);opacity:1;}}
+    .confetti {position:fixed;width:10px;height:10px; top:-10px; animation:fall 3s linear forwards;}
+    @keyframes fall {0%{transform:translateY(0) rotate(0deg); opacity:1;}100%{transform:translateY(100vh) rotate(360deg); opacity:0;}}
+
+    /* Galeri 15 foto */
+    .gallery-container {display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(3, auto); grid-gap: 10px; width:90%; margin-top:20px;}
+    .gallery-item {width:100%; border-radius:10px; opacity:0; transform: translateY(-20px); transition: all 1s ease;}
+    .gallery-item.active {opacity:1; transform: translateY(0);}
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+
+  <!-- Musik Latar -->
+  <audio id="bg-music" src="musik.mp3" loop></audio>
+
+  <!-- Halaman 1: Galaxy -->
+  <section id="galaxy">
+    <div class="planet-title">Happy Birthday Tifany Sayang ❤️</div>
+    <div class="planet-container">
+      <div class="planet"></div>
+      <div class="ring ring1"></div>
+      <div class="ring ring2"></div>
+      <div class="ring ring3"></div>
+    </div>
+    <p style="margin-top:20px; font-style:italic;">Tap layar untuk mulai perjalanan 💫</p>
+  </section>
+
+  <!-- Halaman 2: Timeline -->
+  <section id="timeline">
+    <h2>Perjalanan Indah Kamu ❤️</h2>
+    <div id="timeline-items">
+      <div class="timeline-item">Masa ketika kamu hidup sebagai embrio di dalam rahim, membentuk fondasi fisik dan emosional <br><img src="foto1.jpg"></div>
+      <div class="timeline-item">Masa dimana kamu belajar, pengalaman pertama terhadap semua yang kamu lakukan  <br><img src="foto2.jpg"></div>
+      <div class="timeline-item">Masa dimana kamu memulai eksplorasi, dan pembelajaran mengenai kehidupan di sekitar <br><img src="foto3.jpg"></div>
+      <div class="timeline-item">Masa dimana kamu mengalami pembentukan diri dan emosi yang lebih kompleks, awal mulanya kita menjalin hubungan dan mengalami patah hati bersama <br><img src="foto4.jpg"></div>
+      <div class="timeline-item">Masa sekarang yaitu masa kemandirian, dan perjuangan masa dimana kamu menjalin hubungan yang bahagia, berusaha saling membangun hubungan yang harmonis, dan serius <br><img src="foto5.jpg"></div>
+    </div>
+  </section>
+
+  <!-- Halaman 2.5: Galeri Foto Bertahap -->
+  <section id="photo-gallery">
+    <h2>Kenangan Manis Kamu ✨</h2>
+    <div class="gallery-container">
+      <img src="foto6.jpg" class="gallery-item">
+      <img src="foto7.jpg" class="gallery-item">
+      <img src="foto8.jpg" class="gallery-item">
+      <img src="foto9.jpg" class="gallery-item">
+      <img src="foto10.jpg" class="gallery-item">
+      <img src="foto11.jpg" class="gallery-item">
+      <img src="foto12.jpg" class="gallery-item">
+      <img src="foto13.jpg" class="gallery-item">
+      <img src="foto14.jpg" class="gallery-item">
+      <img src="foto15.jpg" class="gallery-item">
+      <img src="foto16.jpg" class="gallery-item">
+      <img src="foto17.jpg" class="gallery-item">
+      <img src="foto18.jpg" class="gallery-item">
+      <img src="foto19.jpg" class="gallery-item">
+      <img src="foto20.jpg" class="gallery-item">
+    </div>
+  </section>
+
+  <!-- Halaman 3: Doa -->
+  <section id="doa">
+    <h2>Doa Tulus Untukmu 🙏</h2>
+    <p style="max-width:600px; font-size:18px; line-height:1.6;">Semoga panjang umur, sehat selalu, sukses dunia akhirat, dan cinta kita tetap abadi selamanya 💖</p>
+    <img src="foto-doa.jpg" style="max-width:200px; margin-top:15px; border-radius:15px;">
+  </section>
+
+  <!-- Halaman 4: Cake -->
+  <section id="cake-section">
+    <h2 style="color:#ffcc88; margin-bottom:20px;">🎂</h2>
+    <div class="cake-container">
+      <div style="width:220px; height:90px; background:#d2691e; border-radius:20px; position:relative; box-shadow: inset 0 -5px #8b4513;">
+        <div style="width:100%; height:25px; background:#fff5e1; border-radius:20px 20px 0 0; position:absolute; top:0; box-shadow: inset 0 -4px #f5deb3;"></div>
+      </div>
+      <div style="width:160px; height:70px; background:#d2691e; border-radius:20px; position:absolute; top:-60px; left:50%; transform:translateX(-50%); box-shadow: inset 0 -5px #8b4513;">
+        <div style="width:100%; height:20px; background:#fff5e1; border-radius:20px 20px 0 0; position:absolute; top:0; box-shadow: inset 0 -3px #f5deb3;"></div>
+      </div>
+      <div id="candle" style="width:20px; height:60px; background:#ff4d4d; position:absolute; top:-120px; left:50%; transform:translateX(-50%); border-radius:5px; box-shadow:0 0 5px #ff4d4d;"></div>
+      <div id="flame" style="width:25px; height:40px; background:radial-gradient(circle at 50% 30%, #ffff99, #ff6600); border-radius:50%; position:absolute; top:-160px; left:50%; transform:translateX(-50%); animation:flicker 0.25s infinite alternate; box-shadow:0 0 20px #ffae00;"></div>
+    </div>
+    <p style="margin-top:20px; color:#ffcc88; font-style:italic; font-size:18px;">Tap lilinnya untuk meniup 🎂✨</p>
+  </section>
+
+  <script>
+    const sections = ["galaxy","timeline","photo-gallery","doa","cake-section"];
+    let current = 0;
+
+    const stars = document.getElementById("stars");
+    for (let i=0;i<100;i++){
+      const s=document.createElement("div");
+      s.className="star";
+      s.style.top=Math.random()*100+"%";
+      s.style.left=Math.random()*100+"%";
+      s.style.animationDuration=(2+Math.random()*3)+"s";
+      stars.appendChild(s);
+    }
+
+    document.getElementById(sections[0]).style.display="flex";
+    const music = document.getElementById("bg-music");
+
+    const galleryItems = document.querySelectorAll("#photo-gallery .gallery-item");
+    function showGalleryItems(){
+      galleryItems.forEach((item, index)=>{
+        setTimeout(()=>item.classList.add("active"), index * 1000); // 1 detik per foto
+      });
+    }
+
+    document.body.addEventListener("click", ()=>{
+      if(music.paused) music.play();
+      if(current < sections.length-1){
+        document.getElementById(sections[current]).style.display="none";
+        current++;
+        const nextSection = sections[current];
+        document.getElementById(nextSection).style.display="flex";
+
+        if(nextSection==="timeline"){
+          const items=document.querySelectorAll(".timeline-item");
+          let i=0;
+          const interval=setInterval(()=>{
+            if(i<items.length){
+              items[i].classList.add("active");
+              i++;
+            }else clearInterval(interval);
+          },1500);
+        }
+
+        if(nextSection==="photo-gallery"){
+          showGalleryItems();
+        }
+      }
+    });
+
+    const flame=document.getElementById("flame");
+    const candle=document.getElementById("candle");
+    candle.addEventListener("click",()=>{
+      flame.style.display="none";
+      for(let i=0;i<50;i++){
+        const c=document.createElement("div");
+        c.className="confetti";
+        c.style.left=Math.random()*100+"vw";
+        c.style.background=`hsl(${Math.random()*360},100%,50%)`;
+        c.style.animationDuration=(2+Math.random()*3)+"s";
+        document.body.appendChild(c);
+        setTimeout(()=>c.remove(),3000);
+      }
+    });
+  </script>
+</body>
+</html>
